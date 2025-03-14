@@ -9,7 +9,20 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "clear-cache": "node ./scripts/clear-metro-cache.js",
+    "start:employee": "cross-env INCLUDE_EMPLOYEE_CODE=true expo start",
+    "start:customer": "cross-env INCLUDE_EMPLOYEE_CODE=false expo start",
+    "android:employee": "cross-env INCLUDE_EMPLOYEE_CODE=true expo start --android",
+    "android:customer": "cross-env INCLUDE_EMPLOYEE_CODE=false expo start --android",
+    "ios:employee": "cross-env INCLUDE_EMPLOYEE_CODE=true expo start --ios",
+    "ios:customer": "cross-env INCLUDE_EMPLOYEE_CODE=false expo start --ios",
+    "web:employee": "cross-env INCLUDE_EMPLOYEE_CODE=true expo start --web",
+    "web:customer": "cross-env INCLUDE_EMPLOYEE_CODE=false expo start --web",
+    "start:customer:clean": "npm run clear-cache && npm run start:customer",
+    "start:employee:clean": "npm run clear-cache && npm run start:employee",
+    "run:customer": "node ./scripts/run-with-no-cache.js",
+    "run:employee": "node ./scripts/run-with-no-cache.js --employee"
   },
   "jest": {
     "preset": "jest-expo"
@@ -45,6 +58,7 @@
     "@types/jest": "^29.5.12",
     "@types/react": "~18.3.12",
     "@types/react-test-renderer": "^18.3.0",
+    "cross-env": "^7.0.3",
     "jest": "^29.2.1",
     "jest-expo": "~52.0.6",
     "react-test-renderer": "18.3.1",

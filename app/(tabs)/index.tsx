@@ -4,6 +4,8 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import TestTreeShaking from '@/components/TestTreeShaking';
+import DebugTreeShaking from '@/components/DebugTreeShaking';
 
 export default function HomeScreen() {
   return (
@@ -19,6 +21,13 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
+      
+      {/* Tree Shaking Debug */}
+      <DebugTreeShaking />
+      
+      {/* Tree Shaking Test */}
+      <TestTreeShaking />
+      
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
